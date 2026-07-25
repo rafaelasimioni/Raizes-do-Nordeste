@@ -1,14 +1,18 @@
 package br.com.rafaelasimioni.raizesdonordeste.application.usuario;
 
+import br.com.rafaelasimioni.raizesdonordeste.api.usuario.dto.UsuarioAtualizacaoRequestDTO;
 import br.com.rafaelasimioni.raizesdonordeste.api.usuario.dto.UsuarioRequestDTO;
 import br.com.rafaelasimioni.raizesdonordeste.api.usuario.dto.UsuarioResponseDTO;
 import br.com.rafaelasimioni.raizesdonordeste.api.usuario.mapper.UsuarioMapper;
+import br.com.rafaelasimioni.raizesdonordeste.domain.usuario.PerfilUsuario;
 import br.com.rafaelasimioni.raizesdonordeste.domain.usuario.Usuario;
 import br.com.rafaelasimioni.raizesdonordeste.infrastructure.usuario.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-
+import org.springframework.security.access.AccessDeniedException;
 import java.util.List;
 
 @Service
@@ -19,6 +23,8 @@ public class UsuarioService {
 
     private final UsuarioMapper usuarioMapper;
 
+    private final PasswordEncoder passwordEncoder;
+
 
     public UsuarioResponseDTO cadastrar(UsuarioRequestDTO request){
 
@@ -27,6 +33,8 @@ public class UsuarioService {
         }
 
         Usuario usuario = usuarioMapper.toEntity(request);
+
+        usuario.setSenha(passwordEncoder.encode(request.getSenha()));
         usuario.setAtivo(true);
 
         Usuario usuarioSalvo = usuarioRepository.save(usuario);
@@ -51,23 +59,59 @@ public class UsuarioService {
                 .toList();
    }
 
-    public UsuarioResponseDTO atualizar(Long id, UsuarioRequestDTO request) {
+    public UsuarioResponseDTO atualizar(
+            Long id,
+            UsuarioAtualizacaoRequestDTO request,
+            Authentication authentication
+    ) {
+        Usuario usuarioLogado = usuarioRepository
+                .findByEmail(authentication.getName())
+                .orElseThrow(() ->
+                        new RuntimeException("Usuário não encontrado.")
+                );
 
         Usuario usuarioExistente = buscarEntidadePorId(id);
 
+        boolean admin = usuarioLogado.getPerfil() == PerfilUsuario.ADMIN;
+        boolean proprioUsuario = usuarioLogado.getId().equals(id);
+
+        if (!admin && !proprioUsuario) {
+            throw new AccessDeniedException(
+                    "Você não pode alterar outro usuário."
+            );
+        }
+
         usuarioMapper.atualizarEntidade(request, usuarioExistente);
 
-        Usuario usuarioAtualizado = usuarioRepository.save(usuarioExistente);
+        usuarioExistente.setSenha(
+                passwordEncoder.encode(request.getSenha())
+        );
+
+        Usuario usuarioAtualizado =
+                usuarioRepository.save(usuarioExistente);
 
         return usuarioMapper.toResponse(usuarioAtualizado);
-
     }
 
-    public void deletar(Long id) {
+    public void deletar(Long id, Authentication authentication) {
+
+        Usuario usuarioLogado = usuarioRepository
+                .findByEmail(authentication.getName())
+                .orElseThrow(() ->
+                        new RuntimeException("Usuário não encontrado.")
+                );
+
+        boolean admin = usuarioLogado.getPerfil() == PerfilUsuario.ADMIN;
+        boolean proprioUsuario = usuarioLogado.getId().equals(id);
+
+        if (!admin && !proprioUsuario) {
+            throw new AccessDeniedException(
+                    "Você não pode deletar outro usuário."
+            );
+        }
 
         Usuario usuarioExistente = buscarEntidadePorId(id);
 
         usuarioRepository.delete(usuarioExistente);
     }
-
 }
