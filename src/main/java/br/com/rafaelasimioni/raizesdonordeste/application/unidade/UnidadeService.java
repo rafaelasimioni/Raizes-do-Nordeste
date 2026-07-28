@@ -6,10 +6,12 @@ import br.com.rafaelasimioni.raizesdonordeste.api.unidade.mapper.UnidadeMapper;
 import br.com.rafaelasimioni.raizesdonordeste.domain.unidade.Unidade;
 import br.com.rafaelasimioni.raizesdonordeste.infrastructure.unidade.UnidadeRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -42,6 +44,13 @@ public class UnidadeService {
 
     }
 
+    public List<UnidadeResponseDTO> listarTodas() {
+        return unidadeRepository.findAll()
+                .stream()
+                .map(unidadeMapper::toResponseDTO)
+                .toList();
+    }
+
     public List<UnidadeResponseDTO>listarAtivas(){
         return unidadeRepository.findByAtivoTrue()
                 .stream()
@@ -53,11 +62,17 @@ public class UnidadeService {
 
         Unidade unidade = unidadeRepository.findById(id)
                 .orElseThrow(() ->
-                        new RuntimeException("Unidade não encontrada.")
+                        new ResponseStatusException(
+                                HttpStatus.NOT_FOUND,
+                                "Unidade não encontrada."
+                        )
                 );
 
         if (!unidade.getAtivo()) {
-            throw new RuntimeException("Unidade não encontrada.");
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "A unidade está inativa."
+            );
         }
 
         return unidadeMapper.toResponseDTO(unidade);

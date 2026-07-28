@@ -17,6 +17,7 @@ public class UnidadeMapper {
         unidade.setEndereco(dto.getEndereco());
         unidade.setTelefone(dto.getTelefone());
 
+
         return unidade;
     }
 
@@ -43,5 +44,6 @@ public class UnidadeMapper {
         unidade.setEstado(dto.getEstado());
         unidade.setEndereco(dto.getEndereco());
         unidade.setTelefone(dto.getTelefone());
+        unidade.setAtivo(dto.getAtivo());
     }
 }

@@ -30,5 +30,8 @@ public class UnidadeRequestDTO {
     @Size(max = 20, message = "O telefone deve ter no máximo 20 caracteres.")
     private String telefone;
 
+    @NotNull(message = "O status ativo é obrigatório.")
+    private Boolean ativo;
+
 
 }
