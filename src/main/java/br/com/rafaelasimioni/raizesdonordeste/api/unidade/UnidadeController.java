@@ -37,6 +37,11 @@ public class UnidadeController {
         return ResponseEntity.ok(unidadeService.listarAtivas());
     }
 
+    @GetMapping("/todas")
+    public ResponseEntity<List<UnidadeResponseDTO>> listarTodas() {
+        return ResponseEntity.ok(unidadeService.listarTodas());
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<UnidadeResponseDTO> buscarPorId(
             @PathVariable Long id
