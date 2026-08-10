@@ -153,11 +153,9 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 
 				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
+					<release>21</release>
 
 					<annotationProcessorPaths>
-
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
@@ -168,10 +166,8 @@
 							<artifactId>mapstruct-processor</artifactId>
 							<version>${org.mapstruct.version}</version>
 						</path>
-
 					</annotationProcessorPaths>
 				</configuration>
-
 			</plugin>
 
 		</plugins>
