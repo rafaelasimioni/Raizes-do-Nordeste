@@ -305,4 +305,45 @@ public class PedidoService {
             );
         }
     }
+
+    public PedidoResponseDTO atualizarStatus(
+            Long pedidoId,
+            StatusPedido novoStatus
+    ) {
+        validarAdmin();
+
+        Pedido pedido = buscarPedido(pedidoId);
+
+        validarTransicaoStatus(
+                pedido.getStatus(),
+                novoStatus
+        );
+
+        pedido.setStatus(novoStatus);
+        pedido.setDataAtualizacao(LocalDateTime.now());
+
+        Pedido atualizado = pedidoRepository.save(pedido);
+
+        return pedidoMapper.toResponseDTO(atualizado);
+    }
+
+    private void validarTransicaoStatus(
+            StatusPedido statusAtual,
+            StatusPedido novoStatus
+    ) {
+
+        boolean transicaoValida =
+                (statusAtual == StatusPedido.EM_PREPARO
+                        && novoStatus == StatusPedido.PRONTO)
+
+                        || (statusAtual == StatusPedido.PRONTO
+                        && novoStatus == StatusPedido.ENTREGUE);
+
+        if (!transicaoValida) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Transição de status inválida"
+            );
+        }
+    }
 }

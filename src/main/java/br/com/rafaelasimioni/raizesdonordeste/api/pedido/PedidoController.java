@@ -3,6 +3,7 @@ package br.com.rafaelasimioni.raizesdonordeste.api.pedido;
 import br.com.rafaelasimioni.raizesdonordeste.api.pedido.dto.PedidoRequestDTO;
 import br.com.rafaelasimioni.raizesdonordeste.api.pedido.dto.PedidoResponseDTO;
 import br.com.rafaelasimioni.raizesdonordeste.application.pedido.PedidoService;
+import br.com.rafaelasimioni.raizesdonordeste.domain.pedido.StatusPedido;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -59,6 +60,17 @@ public class PedidoController {
 
         return ResponseEntity.ok(
                 pedidoService.listarPorUnidade(unidadeId)
+        );
+    }
+
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<PedidoResponseDTO> atualizarStatus(
+            @PathVariable Long id,
+            @RequestParam StatusPedido status
+    ) {
+
+        return ResponseEntity.ok(
+                pedidoService.atualizarStatus(id, status)
         );
     }
 }
