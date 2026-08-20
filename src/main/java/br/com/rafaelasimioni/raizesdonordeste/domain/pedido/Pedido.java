@@ -1,5 +1,6 @@
 package br.com.rafaelasimioni.raizesdonordeste.domain.pedido;
 
+import br.com.rafaelasimioni.raizesdonordeste.domain.pagamento.Pagamento;
 import br.com.rafaelasimioni.raizesdonordeste.domain.usuario.Usuario;
 import br.com.rafaelasimioni.raizesdonordeste.domain.unidade.Unidade;
 import jakarta.persistence.*;
@@ -56,4 +57,7 @@ public class Pedido {
             orphanRemoval = true
     )
     private List<PedidoItem> itens = new ArrayList<>();
+
+    @OneToOne(mappedBy = "pedido")
+    private Pagamento pagamento;
 }
