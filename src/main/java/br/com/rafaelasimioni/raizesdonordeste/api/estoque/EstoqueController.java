@@ -3,6 +3,7 @@ package br.com.rafaelasimioni.raizesdonordeste.api.estoque;
 import br.com.rafaelasimioni.raizesdonordeste.api.estoque.dto.EstoqueRequestDTO;
 import br.com.rafaelasimioni.raizesdonordeste.api.estoque.dto.EstoqueResponseDTO;
 import br.com.rafaelasimioni.raizesdonordeste.application.estoque.EstoqueService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/estoques")
+@SecurityRequirement(name = "bearerAuth")
 @RequiredArgsConstructor
 public class EstoqueController {
 

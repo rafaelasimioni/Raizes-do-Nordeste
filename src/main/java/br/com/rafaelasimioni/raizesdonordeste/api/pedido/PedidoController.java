@@ -4,6 +4,7 @@ import br.com.rafaelasimioni.raizesdonordeste.api.pedido.dto.PedidoRequestDTO;
 import br.com.rafaelasimioni.raizesdonordeste.api.pedido.dto.PedidoResponseDTO;
 import br.com.rafaelasimioni.raizesdonordeste.application.pedido.PedidoService;
 import br.com.rafaelasimioni.raizesdonordeste.domain.pedido.StatusPedido;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/pedidos")
+@SecurityRequirement(name = "bearerAuth")
 @RequiredArgsConstructor
 public class PedidoController {
 

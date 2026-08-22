@@ -38,6 +38,12 @@ public class SecurityConfig {
                         .requestMatchers("/error").permitAll()
 
                         .requestMatchers(
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**",
+                                "/swagger-ui.html"
+                        ).permitAll()
+
+                        .requestMatchers(
                                 HttpMethod.POST,
                                 "/usuarios"
                         ).permitAll()
@@ -60,7 +66,10 @@ public class SecurityConfig {
                         UsernamePasswordAuthenticationFilter.class
                 )
 
+
                 .build();
+
+
     }
 
     @Bean
