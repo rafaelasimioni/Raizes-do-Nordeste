@@ -4,6 +4,7 @@ import br.com.rafaelasimioni.raizesdonordeste.api.usuario.dto.UsuarioAtualizacao
 import br.com.rafaelasimioni.raizesdonordeste.api.usuario.dto.UsuarioRequestDTO;
 import br.com.rafaelasimioni.raizesdonordeste.api.usuario.dto.UsuarioResponseDTO;
 import br.com.rafaelasimioni.raizesdonordeste.application.usuario.UsuarioService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,11 +33,13 @@ public class UsuarioController {
     }
 
     @GetMapping
+    @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<List<UsuarioResponseDTO>> listarTodos() {
         return ResponseEntity.ok(usuarioService.listarTodos());
     }
 
     @GetMapping("/{id}")
+    @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<UsuarioResponseDTO> buscarId(
             @PathVariable Long id
     ) {
@@ -44,6 +47,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
+    @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<UsuarioResponseDTO> atualizar(
             @PathVariable Long id,
             @RequestBody UsuarioAtualizacaoRequestDTO request,
@@ -55,6 +59,7 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
+    @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<Void> deletar(
             @PathVariable Long id,
             Authentication authentication

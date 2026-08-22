@@ -3,6 +3,7 @@ package br.com.rafaelasimioni.raizesdonordeste.api.unidade;
 import br.com.rafaelasimioni.raizesdonordeste.api.unidade.dto.UnidadeRequestDTO;
 import br.com.rafaelasimioni.raizesdonordeste.api.unidade.dto.UnidadeResponseDTO;
 import br.com.rafaelasimioni.raizesdonordeste.application.unidade.UnidadeService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/unidades")
+@SecurityRequirement(name = "bearerAuth")
 @RequiredArgsConstructor
 public class UnidadeController {
 

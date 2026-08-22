@@ -4,6 +4,7 @@ import br.com.rafaelasimioni.raizesdonordeste.api.produto.dto.ProdutoRequestDTO;
 import br.com.rafaelasimioni.raizesdonordeste.api.produto.dto.ProdutoResponseDTO;
 import br.com.rafaelasimioni.raizesdonordeste.application.produto.ProdutoService;
 import br.com.rafaelasimioni.raizesdonordeste.domain.produto.CategoriaProduto;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/produtos")
+@SecurityRequirement(name = "bearerAuth")
 @RequiredArgsConstructor
 public class ProdutoController {
 
