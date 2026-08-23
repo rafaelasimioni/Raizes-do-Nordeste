@@ -1,0 +1,1271 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Raízes do Nordeste
+meta:
+  id: wrk_595b9bf7f36e4ea7b5a49bec391fe27a
+  created: 1784834914688
+  modified: 1784834914688
+  description: ""
+collection:
+  - name: usuario
+    meta:
+      id: fld_1dc3c838f1e3458f8108d72a63e7cb13
+      created: 1784835025175
+      modified: 1784835025175
+      sortKey: -1784835025175
+      description: ""
+    children:
+      - url: http://localhost:8080/usuarios
+        name: cadastrar
+        meta:
+          id: req_4736c150aa314cf6a9ae87f9a37fecd1
+          created: 1784835036240
+          modified: 1786564750276
+          isPrivate: false
+          description: ""
+          sortKey: -1784835036240
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Tânia Vasquez",
+            	"email": "taniavasquez@gmail.com",
+            	"senha":123456,
+            	"perfil" : "CLIENTE"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios
+        name: buscar usuarios
+        meta:
+          id: req_d1ed1f65ae6447aeaefb7624a0bdbc98
+          created: 1784839174789
+          modified: 1787255137908
+          isPrivate: false
+          description: ""
+          sortKey: -1784839174789
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg3MjU1MDA2LCJleHAiOjE3ODcyNjIyMDZ9.ju-7ZX_w1Zsj-lZXwN7tHhTDEptyjngE8OQfRrdh_BA
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/4
+        name: buscar UM usuario
+        meta:
+          id: req_5dcc5feab9374d9e8c0501eb2fdc07b1
+          created: 1784839730899
+          modified: 1785003459283
+          isPrivate: false
+          description: ""
+          sortKey: -1784839730899
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg0ODQzODEzLCJleHAiOjE3ODQ4NTEwMTN9.pwonIfSuVIAuuYKn4DKEk0ElfJCj_FJVQcG0hdmVabc
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/3
+        name: atualizar
+        meta:
+          id: req_89cc028ce5d2450ebb4ce508e36d8c31
+          created: 1784839818129
+          modified: 1784844426132
+          isPrivate: false
+          description: ""
+          sortKey: -1784839818129
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |+
+            {
+              "nome": "Rafaela Simioni de Ávila",
+              "email": "rsimionideavila@gmail.com",
+              "senha": "12345678",
+              "perfil": "ADMIN"
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg0ODQzODEzLCJleHAiOjE3ODQ4NTEwMTN9.pwonIfSuVIAuuYKn4DKEk0ElfJCj_FJVQcG0hdmVabc
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/5
+        name: deletar
+        meta:
+          id: req_6d4cec41e54a46089584e1a4582ec4bc
+          created: 1784840007037
+          modified: 1785003679940
+          isPrivate: false
+          description: ""
+          sortKey: -1784840007037
+        method: DELETE
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJjYXJsaW5oYUBnbWFpbC5jb20iLCJpYXQiOjE3ODUwMDM2NTUsImV4cCI6MTc4NTAxMDg1NX0._W9eC-WVr16tqJbPfKb8zqNtGC-GygbR8kpTaMhgOu0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: login
+    meta:
+      id: fld_00666fc8af764c7d9a6b2a7c30c50ab3
+      created: 1784838338554
+      modified: 1784838338554
+      sortKey: -1784838338554
+      description: ""
+    children:
+      - url: http://localhost:8080/auth/login
+        name: login cliente
+        meta:
+          id: req_d58d0a3079f14c168807eb76638423f7
+          created: 1784838348894
+          modified: 1785188139445
+          isPrivate: false
+          description: ""
+          sortKey: -1784838348894
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "carlinha@gmail.com",
+              "senha": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9y\
+              ZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxN\
+              zg1MDAzMDU5LCJleHAiOjE3ODUwMTAyNTl9.XVoRsYNEkZaG_koF8QmREGg_JhI3H\
+              wii5SsaG_dQd58"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/auth/login
+        name: login Admin
+        meta:
+          id: req_afee3eb9d7984575be08a3c33b50cd6b
+          created: 1785099909832
+          modified: 1786565110555
+          isPrivate: false
+          description: ""
+          sortKey: -1785099909832
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "rsimionideavila@gmail.com",
+              "senha": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg2NTY0MDcwLCJleHAiOjE3ODY1NzEyNzB9.ygYJrvjA4Y7c-zeaFy8giJidD6hV7U7i8TQXrmKwnBM
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/auth/login
+        name: login cliente 2
+        meta:
+          id: req_407a7f0edb164a46b64749363ab21052
+          created: 1786564624549
+          modified: 1786566540119
+          isPrivate: false
+          description: ""
+          sortKey: -1786564624549
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "taniavasquez@gmail.com",
+              "senha": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: ""
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: unidade
+    meta:
+      id: fld_4d4c59850a39422ab6215d5bffc90f7c
+      created: 1785099411859
+      modified: 1785099411859
+      sortKey: -1785099411859
+      description: ""
+    children:
+      - url: http://localhost:8080/unidades
+        name: cadastrar
+        meta:
+          id: req_fe0f6f9a15c547abb8cb9654154551d4
+          created: 1785099423837
+          modified: 1785273085470
+          isPrivate: false
+          description: ""
+          sortKey: -1785099423837
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+
+              "cidade": "Florianópolis",
+              "endereco": "Av. Beira-Mar Norte, 1500",
+              "estado": "SC",
+              "nome": "Unidade Florianópolis",
+              "telefone": "48999999999"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1MjcyNzA0LCJleHAiOjE3ODUyNzk5MDR9.YAKJVqAOW5imDHCBLmtvlYUF8lbypoioNu4Bi05Fq34
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/unidades
+        name: buscar todas ativas
+        meta:
+          id: req_23db3575e1774a98b4a5c06a33005065
+          created: 1785099981136
+          modified: 1785277141256
+          isPrivate: false
+          description: ""
+          sortKey: -1785099981136
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1Mjc2ODU2LCJleHAiOjE3ODUyODQwNTZ9.ko8ulhM9TQOejglviGMxYNoZWdJHfwa1m_MjOPFo2tQ
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/unidades/1
+        name: buscar unidade por id
+        meta:
+          id: req_d512352423174aed8354c76a15fddaef
+          created: 1785100154920
+          modified: 1787000093558
+          isPrivate: false
+          description: ""
+          sortKey: -1785100154920
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg2OTk1NTAwLCJleHAiOjE3ODcwMDI3MDB9.PrVCmSgCoTUGpg1CeqQBh4gIUyI6_4otWWlOBF1v8nk
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/unidades/2
+        name: atualizar unidade
+        meta:
+          id: req_c6812066a1c84fd58ebd85d28687636c
+          created: 1785100308632
+          modified: 1785277278308
+          isPrivate: false
+          description: ""
+          sortKey: -1785100308632
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "ativo": false,
+              "cidade": "Cuiabá",
+              "endereco": "Av. Historiador Rubens de Mendonça, 1200",
+              "estado": "MT",
+              "id": 2,
+              "nome": "Unidade Cuiabá",
+              "telefone": "65999999999"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1Mjc2ODU2LCJleHAiOjE3ODUyODQwNTZ9.ko8ulhM9TQOejglviGMxYNoZWdJHfwa1m_MjOPFo2tQ
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/unidades/1
+        name: deletar unidade
+        meta:
+          id: req_81f3854d1b0b49168cac2b8a59220b08
+          created: 1785100679906
+          modified: 1785100808976
+          isPrivate: false
+          description: ""
+          sortKey: -1785100679906
+        method: DELETE
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJjYXJsaW5oYUBnbWFpbC5jb20iLCJpYXQiOjE3ODUwOTk3MjQsImV4cCI6MTc4NTEwNjkyNH0.0SWKXbgtViJABdRYrAPyCYgm0QZQxTGDPAoOOIsJBlI
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/unidades/todas
+        name: ativas e inativas
+        meta:
+          id: req_7de1299ed16a4c3c825c2735e0035096
+          created: 1785277144427
+          modified: 1786564083846
+          isPrivate: false
+          description: ""
+          sortKey: -1785277144427
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg2NTY0MDcwLCJleHAiOjE3ODY1NzEyNzB9.ygYJrvjA4Y7c-zeaFy8giJidD6hV7U7i8TQXrmKwnBM
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: produto
+    meta:
+      id: fld_6ac6e4b2b56c4812b6cb2456a4a61d64
+      created: 1785186680481
+      modified: 1785186680481
+      sortKey: -1785186680482
+      description: ""
+    children:
+      - url: localhost:8080/produtos
+        name: cadastrar produto
+        meta:
+          id: req_bc27ef7fad80460993c6caba77233e10
+          created: 1785186729500
+          modified: 1785187176737
+          isPrivate: false
+          description: ""
+          sortKey: -1785186729500
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "nome": "Cartola",
+              "descricao": "Sobremesa de banana frita, queijo coalho, canela e açúcar.",
+              "preco": 16.90,
+              "categoria": "SOBREMESA"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1MTg2NzcxLCJleHAiOjE3ODUxOTM5NzF9.PI1EcrD9M0o_y55tC980EK3AuQpXvB_GQdI8HBsGDt4
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: " http://localhost:8080/produtos"
+        name: todos produtos
+        meta:
+          id: req_10610c27fa0b4b61bfba7d766f2070d3
+          created: 1785187226346
+          modified: 1785359875785
+          isPrivate: false
+          description: ""
+          sortKey: -1785187226346
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1MzU3MTM3LCJleHAiOjE3ODUzNjQzMzd9.bKWadGpu5cCWxqSbqm2XzD9Z9-6NwDxH1PaQ5BB2dP8
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/categoria/SOBREMESA
+        name: por categoria
+        meta:
+          id: req_7a4a2a84cc5e4d88907a40e90e589483
+          created: 1785187372265
+          modified: 1785268773074
+          isPrivate: false
+          description: ""
+          sortKey: -1785187372265
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJjYXJsaW5oYUBnbWFpbC5jb20iLCJpYXQiOjE3ODUyNjg3NDAsImV4cCI6MTc4NTI3NTk0MH0.jJd1G8srenRTuq0tBB87VbozO6JWZnxYGvkUIfY9TMc
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/4
+        name: por id
+        meta:
+          id: req_ea7e9fd4202e46978fe63311ae53bd93
+          created: 1785187465770
+          modified: 1785187503211
+          isPrivate: false
+          description: ""
+          sortKey: -1785187465770
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1MTg2NzcxLCJleHAiOjE3ODUxOTM5NzF9.PI1EcrD9M0o_y55tC980EK3AuQpXvB_GQdI8HBsGDt4
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/2
+        name: atualizar com admin
+        meta:
+          id: req_a1a067966604416ebddfd48d8c19af41
+          created: 1785187947966
+          modified: 1785188080038
+          isPrivate: false
+          description: ""
+          sortKey: -1785187947966
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Suco de Umbu 500ml",
+              "descricao": "Suco natural de umbu servido gelado.",
+              "preco": 9.50,
+              "categoria": "BEBIDA"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1MTg2NzcxLCJleHAiOjE3ODUxOTM5NzF9.PI1EcrD9M0o_y55tC980EK3AuQpXvB_GQdI8HBsGDt4
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/1
+        name: atualizar com cliente
+        meta:
+          id: req_aaecb1a77bce41e78b2f908d2cd2ad22
+          created: 1785188059527
+          modified: 1785188150775
+          isPrivate: false
+          description: ""
+          sortKey: -1785188059527
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            	{
+            		"ativo": true,
+            		"categoria": "BEBIDA",
+            		"descricao": "Água mineral sem gás.",
+            		"id": 1,
+            		"nome": "Água Mineral 500ml",
+            		"preco": 5.50
+            	}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJjYXJsaW5oYUBnbWFpbC5jb20iLCJpYXQiOjE3ODUxODY5NTAsImV4cCI6MTc4NTE5NDE1MH0.qkxjmDcjBB-fY0FCd4uq2_cppyR3NGF-sZjsb7PTY4U
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/4
+        name: deletar
+        meta:
+          id: req_454c8dabfefd4194967ee84ad4502336
+          created: 1785188197107
+          modified: 1785188352210
+          isPrivate: false
+          description: ""
+          sortKey: -1785188197107
+        method: DELETE
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJjYXJsaW5oYUBnbWFpbC5jb20iLCJpYXQiOjE3ODUxODY5NTAsImV4cCI6MTc4NTE5NDE1MH0.qkxjmDcjBB-fY0FCd4uq2_cppyR3NGF-sZjsb7PTY4U
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: unidade-produto
+    meta:
+      id: fld_b3a30d9b3c684f7885479c321fec4867
+      created: 1785272486396
+      modified: 1785360845887
+      sortKey: -1785272486396
+      description: ""
+    children:
+      - url: http://localhost:8080/unidades-produtos
+        name: cadastrar unidade-produto
+        meta:
+          id: req_2679e89515e14b67ae4c214e4507ac37
+          created: 1785272489709
+          modified: 1785363163485
+          isPrivate: false
+          description: ""
+          sortKey: -1785272489709
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "produtoId": 6,
+              "unidadeId": 1,
+            	"preco": 9.90,
+            	"disponivel": true
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1MzU5OTYxLCJleHAiOjE3ODUzNjcxNjF9.Lf7EftLD076r1uoe62ggdT4DXRffNBM4gITn3zb-lvc
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/unidades-produtos
+        name: "buscar relacoes "
+        meta:
+          id: req_20fcdd31093b434cbf9a4326f2532294
+          created: 1785357090251
+          modified: 1785357325992
+          isPrivate: false
+          description: ""
+          sortKey: -1785357090251
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1MzU3MTM3LCJleHAiOjE3ODUzNjQzMzd9.bKWadGpu5cCWxqSbqm2XzD9Z9-6NwDxH1PaQ5BB2dP8
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/unidades-produtos/2
+        name: atualizar relacao
+        meta:
+          id: req_48be27032efc4d1ead7dfcd2fb21f106
+          created: 1785357270591
+          modified: 1785357496717
+          isPrivate: false
+          description: ""
+          sortKey: -1785357270591
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "produtoId": 3,
+              "unidadeId": 3,
+              "preco": 21.90,
+            	"disponivel": true
+
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1MzU3MTM3LCJleHAiOjE3ODUzNjQzMzd9.bKWadGpu5cCWxqSbqm2XzD9Z9-6NwDxH1PaQ5BB2dP8
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/unidades-produtos/7
+        name: buscar por id da relacao
+        meta:
+          id: req_a7f0570146fc45c79a4693f664a3fc66
+          created: 1785360100381
+          modified: 1785361843360
+          isPrivate: false
+          description: ""
+          sortKey: -1785360100381
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1MzU5OTYxLCJleHAiOjE3ODUzNjcxNjF9.Lf7EftLD076r1uoe62ggdT4DXRffNBM4gITn3zb-lvc
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/unidades-produtos/unidade/3
+        name: buscar pelo id da unidade
+        meta:
+          id: req_063f862b33794213b4c854a52576d652
+          created: 1785360298256
+          modified: 1785360540347
+          isPrivate: false
+          description: ""
+          sortKey: -1785360298256
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1MzU5OTYxLCJleHAiOjE3ODUzNjcxNjF9.Lf7EftLD076r1uoe62ggdT4DXRffNBM4gITn3zb-lvc
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/unidades-produtos/cliente/produto/3
+        name: busca id de produto
+        meta:
+          id: req_89c7c57f9d234b3397e1cdc53113f2a2
+          created: 1785360603316
+          modified: 1785360678592
+          isPrivate: false
+          description: ""
+          sortKey: -1785360603316
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1MzU5OTYxLCJleHAiOjE3ODUzNjcxNjF9.Lf7EftLD076r1uoe62ggdT4DXRffNBM4gITn3zb-lvc
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/unidades-produtos/3
+        name: deletar relacao
+        meta:
+          id: req_11b489968dd64a2abbbf5c143e8927e0
+          created: 1785361796368
+          modified: 1785362004536
+          isPrivate: false
+          description: ""
+          sortKey: -1785361796368
+        method: DELETE
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg1MzU5OTYxLCJleHAiOjE3ODUzNjcxNjF9.Lf7EftLD076r1uoe62ggdT4DXRffNBM4gITn3zb-lvc
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/unidades-produtos
+        name: todas relacoes
+        meta:
+          id: req_2c357488a17d4252bb50d71767ad40f4
+          created: 1786388709221
+          modified: 1787000108295
+          isPrivate: false
+          description: ""
+          sortKey: -1786388709221
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg2OTk1NTAwLCJleHAiOjE3ODcwMDI3MDB9.PrVCmSgCoTUGpg1CeqQBh4gIUyI6_4otWWlOBF1v8nk
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - name: cliente
+        meta:
+          id: fld_8d7159ddff534ddcbba555e651fab0db
+          created: 1785360827368
+          modified: 1785360827368
+          sortKey: -1785360827368
+          description: ""
+        children:
+          - url: localhost:8080/unidades-produtos
+            name: disponiveis- produtos e unidades
+            meta:
+              id: req_857aae619a7c49dba233806d70e4a1da
+              created: 1785360851183
+              modified: 1786564133210
+              isPrivate: false
+              description: ""
+              sortKey: -1785360851183
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg2NTY0MDcwLCJleHAiOjE3ODY1NzEyNzB9.ygYJrvjA4Y7c-zeaFy8giJidD6hV7U7i8TQXrmKwnBM
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+  - name: estoque
+    meta:
+      id: fld_498b84ef82e34abc8771aff1216b043b
+      created: 1786388614763
+      modified: 1786388614763
+      sortKey: -1786388614763
+      description: ""
+    children:
+      - url: http://localhost:8080/estoques
+        name: cadastrar
+        meta:
+          id: req_b85c6ea28aa84066a4d7a4cc7078fac6
+          created: 1786388621674
+          modified: 1786390082676
+          isPrivate: false
+          description: ""
+          sortKey: -1786388621674
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "unidadeProdutoId": 1,
+              "quantidadeAtual": 2
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg2Mzg4Njc3LCJleHAiOjE3ODYzOTU4Nzd9.SypZ2r9gJdNL7kHV42cdNaBJTrwYelNNsZ7IaS3a6jU
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/estoques
+        name: buscar todo estoque
+        meta:
+          id: req_701b0915e9694280b18f8039eb1cb933
+          created: 1786389068355
+          modified: 1786999933995
+          isPrivate: false
+          description: ""
+          sortKey: -1786389068355
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg2OTk1NTAwLCJleHAiOjE3ODcwMDI3MDB9.PrVCmSgCoTUGpg1CeqQBh4gIUyI6_4otWWlOBF1v8nk
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/estoques/7
+        name: atualizar
+        meta:
+          id: req_808c0249c45d4371b008330e00283ac5
+          created: 1786390180728
+          modified: 1786390418918
+          isPrivate: false
+          description: ""
+          sortKey: -1786390180728
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "unidadeProdutoId": 8,
+                "quantidadeAtual": 5
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg2Mzg4Njc3LCJleHAiOjE3ODYzOTU4Nzd9.SypZ2r9gJdNL7kHV42cdNaBJTrwYelNNsZ7IaS3a6jU
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/estoques/1
+        name: deletar estoque
+        meta:
+          id: req_98da5bf0a5c74aa5b77aeffdc51ad320
+          created: 1786390484111
+          modified: 1787509474914
+          isPrivate: false
+          description: ""
+          sortKey: -1786390484111
+        method: DELETE
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg2Mzg4Njc3LCJleHAiOjE3ODYzOTU4Nzd9.SypZ2r9gJdNL7kHV42cdNaBJTrwYelNNsZ7IaS3a6jU
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: pedido
+    meta:
+      id: fld_81fa22d91bde4999adf4bc495dfa1c48
+      created: 1786563308888
+      modified: 1786563308888
+      sortKey: -1786563308888
+      description: ""
+    children:
+      - url: " http://localhost:8080/pedidos"
+        name: criar pedido
+        meta:
+          id: req_b8bf987e2be84fa7ad3e705d5993328c
+          created: 1786563315004
+          modified: 1786564820999
+          isPrivate: false
+          description: ""
+          sortKey: -1786563315004
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "unidadeId": 1,
+              "canalPedido": "APP",
+              "itens": [
+             
+                {
+                  "unidadeProdutoId": 5,
+                  "quantidade": 20
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJjYXJsaW5oYUBnbWFpbC5jb20iLCJpYXQiOjE3ODY1NjMzNzgsImV4cCI6MTc4NjU3MDU3OH0.Er0bu-lRIAeX4p1DxhPrP0IbT8p5g9dq73NjhulGSWQ
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/pedidos/2
+        name: por id
+        meta:
+          id: req_6034da4c79a34d72a9455d2c603d9a1c
+          created: 1786564553322
+          modified: 1786566547862
+          isPrivate: false
+          description: ""
+          sortKey: -1786564553322
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJ0YW5pYXZhc3F1ZXpAZ21haWwuY29tIiwiaWF0IjoxNzg2NTY0NzY3LCJleHAiOjE3ODY1NzE5Njd9.lyfsmD-qyk4Za7oqhwKl3QYry1XKWb3PvMDgVgHIbHo
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: " http://localhost:8080/pedidos"
+        name: criar pedido cliente 2
+        meta:
+          id: req_651e12943c6b4668a77889b639af81a7
+          created: 1786564799098
+          modified: 1786566485967
+          isPrivate: false
+          description: ""
+          sortKey: -1786564799098
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "unidadeId": 3,
+              "canalPedido": "WEB",
+              "itens": [
+             
+                {
+                  "unidadeProdutoId": 7,
+                  "quantidade": 1
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJ0YW5pYXZhc3F1ZXpAZ21haWwuY29tIiwiaWF0IjoxNzg2NTY0NzY3LCJleHAiOjE3ODY1NzE5Njd9.lyfsmD-qyk4Za7oqhwKl3QYry1XKWb3PvMDgVgHIbHo
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/pedidos
+        name: todos pedidos
+        meta:
+          id: req_3d9bd494939f4199b834893d291d35fd
+          created: 1786565061944
+          modified: 1787002828191
+          isPrivate: false
+          description: ""
+          sortKey: -1786565061944
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg3MDAyNzU5LCJleHAiOjE3ODcwMDk5NTl9.4i3PlX0OjyVXubrXdk87ILdE2fSkNVI6xP0ST6b7FXE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/pedidos/usuario/4
+        name: pedido por usuário
+        meta:
+          id: req_f3e551d6644e4f91a9fd2f6360ce353d
+          created: 1786995539826
+          modified: 1786995735541
+          isPrivate: false
+          description: ""
+          sortKey: -1786995539826
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg2OTk1NTAwLCJleHAiOjE3ODcwMDI3MDB9.PrVCmSgCoTUGpg1CeqQBh4gIUyI6_4otWWlOBF1v8nk
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/pedidos/1/status?status=ENTREGUE
+        name: atualizar status
+        meta:
+          id: req_dfdd36e541c84cacbea5feb691c06bd1
+          created: 1787004172185
+          modified: 1787004295178
+          isPrivate: false
+          description: ""
+          sortKey: -1787004172185
+        method: PATCH
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg3MDAyNzU5LCJleHAiOjE3ODcwMDk5NTl9.4i3PlX0OjyVXubrXdk87ILdE2fSkNVI6xP0ST6b7FXE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: pagamento
+    meta:
+      id: fld_52b834169827486db2e3eb377dbfd253
+      created: 1786999575251
+      modified: 1786999575251
+      sortKey: -1786999575251
+      description: ""
+    children:
+      - url: localhost:8080/pagamentos/mock/5?aprovado=false
+        name: New Request
+        meta:
+          id: req_3dc35e4e26be4879864623d12e1c18bd
+          created: 1786999578710
+          modified: 1787002777013
+          isPrivate: false
+          description: ""
+          sortKey: -1786999578710
+        method: POST
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYWl6ZXMtZG8tbm9yZGVzdGUiLCJzdWIiOiJyc2ltaW9uaWRlYXZpbGFAZ21haWwuY29tIiwiaWF0IjoxNzg3MDAyNzU5LCJleHAiOjE3ODcwMDk5NTl9.4i3PlX0OjyVXubrXdk87ILdE2fSkNVI6xP0ST6b7FXE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_022eee4860d5773a9241992bb4795ca517c14b44
+    created: 1784834914706
+    modified: 1784835325568
+  cookies:
+    - id: 7b2d398f-c33c-46b7-b670-2a823860c8cb
+      key: JSESSIONID
+      value: A276D8C1D9E52A900B58BDEC9AE6AC23
+      domain: localhost
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_022eee4860d5773a9241992bb4795ca517c14b44
+    created: 1784834914691
+    modified: 1784834914691
+    isPrivate: false
